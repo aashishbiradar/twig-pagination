@@ -6,7 +6,7 @@
     {# currentPage is page number of current page #}
     {# set above variables in php #}
 
-    {% set lastPage = ((itemPerPage-1)/itemsPerPage)|round(0, 'floor') + 1 %}
+    {% set lastPage = (itemPerPage/itemsPerPage)|round(0, 'ceil') %}
     {% set mid = currentPage >= lastPage-2 ? lastPage-2 : currentPage <= 3 ? 3 : currentPage %}
     {% if lastPage > 1%}
         <div class="pagination">
